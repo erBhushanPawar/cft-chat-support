@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ChatService } from './chat.service';
+import { PwaService } from './pwa.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ChatService } from './chat.service';
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ChatService],
+  providers: [ChatService, PwaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
