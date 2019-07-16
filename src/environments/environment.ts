@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dialogFlow: {
+    accessToken: '1d2eba55360b4958a9536d94a99f689a'
+  }
 };
 
 /*

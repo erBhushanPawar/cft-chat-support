@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatService } from './chat.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cft-chat-support';
+  constructor(private _chatService: ChatService){}
+  ngOnInit(){
+    this._chatService.talk()
+  }
 }
