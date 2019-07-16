@@ -10,17 +10,19 @@ import { PwaService } from './pwa.service';
 export class AppComponent {
   title = 'cft-chat-support';
   updateAvailable: boolean = false;
-  constructor(private _chatService: ChatService,
-              public pwaService: PwaService){}
-  ngOnInit(){
-    this._chatService.talk();
-    this.pwaService.getUpdateAvailable().subscribe(state=>{
+  constructor(
+    public pwaService: PwaService) {
+
+  }
+
+  ngOnInit() {
+    this.pwaService.getUpdateAvailable().subscribe(state => {
       this.updateAvailable = state;
     });
   }
 
-  installApp(){
-    if(this.pwaService.promptAvailable){
+  installApp() {
+    if (this.pwaService.promptAvailable) {
       this.pwaService.promptAvailable.prompt();
     }
   }

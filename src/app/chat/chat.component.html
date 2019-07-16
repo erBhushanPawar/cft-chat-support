@@ -1,0 +1,23 @@
+
+<div class="chat-window container">
+    <div *ngFor="let message of conversation" class="row">
+        <div [ngClass]="message.sentBy==='human'?'msg-bubble-human col-xs-12 col-md-10':'msg-bubble-bot col-xs-12 col-md-10'">
+            {{message.content}}
+
+        </div>
+    </div>
+</div>
+
+<div class="message-input container-fluid">
+    <form (submit)="sendMessage()">
+        <div class="row form-group">
+            <div class="col-10">
+                <input type="text" class="form-control input-msg-box" placeholder="Type a message" id="inputMessage"
+                    name="inputMessage" [(ngModel)]="inputMessage">
+            </div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </form>
+</div>

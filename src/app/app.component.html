@@ -1,11 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <p *ngIf="updateAvailable">There are some updates available. Please refresh to get them.</p>
 <button *ngIf="pwaService.promptAvailable" (click)="installApp()">Install App</button>
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<h2>Here are some links to help you start: </h2>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <span class ="navbar-brand"> <img src="./../assets/images/bot.png" height="30" width="30" style="margin-right:1rem; margin-top:-0.5rem"> CFT Chatbot</span>
+</nav>
+<app-chat></app-chat>
 
